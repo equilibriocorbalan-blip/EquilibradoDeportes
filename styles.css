@@ -1,0 +1,1109 @@
+:root {
+  --gold: #e8b54a;
+  --gold-deep: #c48a22;
+  --gold-soft: #f4d48a;
+  --ink: #14181e;
+  --slate: #2a323c;
+  --slate-2: #1c2229;
+  --mist: #f4f5f7;
+  --line: #e6e8ec;
+  --muted: #6b7380;
+  --white: #fff;
+  --whatsapp: #25d366;
+  --shadow: 0 18px 50px rgba(20, 24, 30, 0.12);
+  --radius: 18px;
+}
+
+/* =========================
+   BASE
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--slate-2);
+  border-bottom: 1px solid rgba(244, 212, 138, 0.12);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* =========================
+   MARCA
+========================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+}
+
+.brand-mark {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 32%;
+  border: 1px solid rgba(232, 181, 74, 0.45);
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  min-width: 0;
+}
+
+.brand-name strong {
+  font-family: "Cinzel", serif;
+  color: var(--gold);
+  letter-spacing: 0.10em;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.brand-name span {
+  color: #cfd6de;
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #d7dde4;
+  font-weight: 600;
+  font-size: 0.88rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.nav a {
+  white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--gold);
+}
+
+/* =========================
+   ACCIONES DEL HEADER
+========================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.header-actions .btn {
+  white-space: nowrap;
+}
+
+/*
+  Los botones se achican progresivamente
+  antes de desaparecer.
+*/
+
+.header-actions .btn-gold {
+  padding: 10px 15px;
+  font-size: 0.82rem;
+}
+
+/* =========================
+   BOTÓN MENÚ
+========================= */
+
+.menu-btn {
+  display: none;
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid rgba(232, 181, 74, 0.4);
+  color: var(--gold);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: 0.2s ease;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+  padding: 13px 22px;
+}
+
+.btn-gold:hover {
+  background: var(--gold-soft);
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--white);
+  padding: 12px 18px;
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #073;
+  padding: 12px 18px;
+}
+
+.btn-whatsapp:hover {
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 18px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(232, 181, 74, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(180deg, #f7f8fa 0%, #fff 100%);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 640px;
+  padding: 30px 0 10px;
+  max-width: 100%;
+}
+
+.kicker {
+  color: var(--gold-deep);
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(3.1rem, 7vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 16px 0 18px;
+  text-transform: uppercase;
+}
+
+.hero h1 em {
+  color: #c1272d;
+  font-style: normal;
+}
+
+.hero p {
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 560px;
+  min-width: 0;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0;
+  filter: contrast(1.05);
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categories {
+  padding: 70px 0 30px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 18px;
+  max-width: 100%;
+}
+
+.cat-card {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: #dfe3e8;
+  color: var(--white);
+}
+
+.cat-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  filter: brightness(0.62);
+  transition: 0.4s ease;
+}
+
+.cat-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.72);
+}
+
+.cat-copy {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+}
+
+.cat-copy h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cat-copy span {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--gold-soft);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+  padding: 72px 0;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-head h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.filter {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--slate-2);
+  color: var(--gold);
+  border-color: var(--slate-2);
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 100%;
+}
+
+.product {
+  background: var(--mist);
+  border: 1px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s ease;
+  min-width: 0;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.product-media {
+  height: 230px;
+  overflow: hidden;
+  background: #e8eaee;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 16px 16px 18px;
+  background: var(--white);
+}
+
+.product-cat {
+  color: var(--gold-deep);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product h3 {
+  font-size: 1.02rem;
+  margin: 6px 0 10px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   POR QUÉ ELEGIRNOS
+========================= */
+
+.why {
+  background: var(--mist);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 100%;
+}
+
+.why-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 28px 22px;
+  text-align: center;
+}
+
+.why-icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(232, 181, 74, 0.16);
+  color: var(--gold-deep);
+  font-size: 1.2rem;
+}
+
+.why-card h3 {
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* =========================
+   UBICACIÓN
+========================= */
+
+.location {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 24, 30, 0.78),
+      rgba(20, 24, 30, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1600&q=80")
+      center / cover;
+  color: var(--white);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 100%;
+}
+
+.location h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 10px 0 16px;
+}
+
+.location p {
+  color: #d5dbe3;
+  margin-bottom: 12px;
+}
+
+.owner {
+  margin: 22px 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.owner strong {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.08em;
+}
+
+.map-card {
+  background: var(--white);
+  color: var(--ink);
+  padding: 22px;
+  border-radius: var(--radius);
+  min-width: 0;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: var(--slate-2);
+  color: #c9d1da;
+  padding: 42px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 100%;
+}
+
+.footer h4 {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.footer a:hover {
+  color: var(--gold);
+}
+
+.copy {
+  text-align: center;
+  padding-top: 18px;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   WHATSAPP FLOTANTE
+========================= */
+
+.fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #073;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  font-size: 1.6rem;
+}
+
+/* =========================
+   MODAL PRODUCTO
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 14, 18, 0.62);
+  display: none;
+  place-items: center;
+  z-index: 80;
+  padding: 20px;
+}
+
+.modal.open {
+  display: grid;
+}
+
+.modal-card {
+  width: min(860px, 100%);
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 28px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* =========================
+   TALLES
+========================= */
+
+.size-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0 20px;
+}
+
+.size {
+  min-width: 42px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.size.active {
+  background: var(--slate-2);
+  color: var(--gold);
+  border-color: var(--slate-2);
+}
+
+/* =========================
+   CANTIDAD
+========================= */
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.qty button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+}
+
+/* ======================================================
+   HEADER - TABLET
+====================================================== */
+
+@media (max-width: 1100px) {
+
+  .header .container {
+    gap: 10px;
+  }
+
+  .brand-name strong {
+    font-size: 0.82rem;
+  }
+
+  .brand-name span {
+    font-size: 0.59rem;
+    letter-spacing: 0.22em;
+  }
+
+  .nav {
+    gap: 13px;
+    font-size: 0.78rem;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-actions .btn-gold {
+    padding: 9px 11px;
+    font-size: 0.74rem;
+  }
+}
+
+/* ======================================================
+   TABLET / MENÚ
+====================================================== */
+
+@media (max-width: 980px) {
+
+  .hero-grid,
+  .location-grid,
+  .modal-card,
+  .footer-grid,
+  .cat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*
+    A partir de acá se usa menú hamburguesa.
+    Los botones de WhatsApp e Instagram siguen visibles.
+  */
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--slate);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 24px 24px;
+    gap: 14px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-visual,
+  .hero-visual img {
+    min-height: 380px;
+    height: 380px;
+  }
+}
+
+/* ======================================================
+   CELULARES
+====================================================== */
+
+@media (max-width: 640px) {
+
+  .container {
+    width: calc(100% - 24px);
+    max-width: 100%;
+  }
+
+  .header .container {
+    min-height: 70px;
+    gap: 6px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .brand-name strong {
+    font-size: 0.70rem;
+    letter-spacing: 0.07em;
+  }
+
+  .brand-name span {
+    font-size: 0.50rem;
+    letter-spacing: 0.17em;
+    margin-top: 3px;
+  }
+
+  /*
+    Botones más chicos pero todavía visibles.
+  */
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .header-actions .btn-gold {
+    padding: 8px 9px;
+    font-size: 0.66rem;
+    border-radius: 7px;
+  }
+
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .product-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .cat-grid {
+    gap: 12px;
+  }
+
+  .cat-card {
+    min-height: 230px;
+  }
+
+  .cat-card img {
+    min-height: 230px;
+  }
+
+  /*
+    MODAL PRODUCTO EN CELULAR
+  */
+
+  .modal {
+    padding: 10px;
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+
+  .modal-card {
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - 20px);
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    margin: auto;
+  }
+
+  .modal-card img {
+    width: 100%;
+    height: 240px;
+    min-height: 240px;
+    object-fit: cover;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-body h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-right: 30px;
+  }
+
+  .modal-body .price {
+    font-size: 1.1rem;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+}
+
+/* ======================================================
+   CELULARES ANGOSTOS
+   Los botones siguen visibles y se reducen un poco más.
+====================================================== */
+
+@media (max-width: 430px) {
+
+  .container {
+    width: calc(100% - 16px);
+  }
+
+  .header .container {
+    gap: 4px;
+  }
+
+  .brand {
+    gap: 5px;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .brand-name strong {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+
+  .brand-name span {
+    font-size: 0.43rem;
+    letter-spacing: 0.13em;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-actions .btn-gold {
+    padding: 7px 7px;
+    font-size: 0.58rem;
+    letter-spacing: 0;
+  }
+
+  .menu-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================================
+   PANTALLAS MUY ANGOSTAS
+   Se mantiene todo dentro de la cabecera.
+====================================================== */
+
+@media (max-width: 360px) {
+
+  .container {
+    width: calc(100% - 10px);
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .brand-name strong {
+    font-size: 0.56rem;
+  }
+
+  .brand-name span {
+    font-size: 0.38rem;
+    letter-spacing: 0.10em;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .header-actions .btn-gold {
+    padding: 6px 6px;
+    font-size: 0.52rem;
+  }
+
+  .menu-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ======================================================
+   SEGURIDAD CONTRA DESBORDE
+====================================================== */
+
+.product-grid,
+.cat-grid,
+.hero-grid,
+.location-grid,
+.why-grid,
+.footer-grid {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.product,
+.product-body,
+.hero-grid > *,
+.location-grid > *,
+.footer-grid > * {
+  min-width: 0;
+}
