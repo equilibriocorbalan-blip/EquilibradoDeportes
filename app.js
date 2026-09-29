@@ -83,7 +83,7 @@ async function cargarProductos() {
     const { data, error } = await supabaseClient
       .from("productos")
       .select("*")
-      .order("id", { ascending: false });
+      .order("nombre", { ascending: true });
 
     if (error) {
 
@@ -237,6 +237,13 @@ function renderProducts() {
       );
     });
   }
+
+  list.sort((a, b) =>
+    a.name.localeCompare(b.name, "es", {
+      sensitivity: "base",
+      numeric: true
+    })
+  );
 
   console.log(
     "Categoría activa:",
